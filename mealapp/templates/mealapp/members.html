@@ -1,0 +1,91 @@
+{% extends 'mealapp/base.html' %}
+{% load staticfiles %}
+{% load data_load %}
+{% block content %}	
+	<!-- Breadcomb area Start-->
+	<div class="breadcomb-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="breadcomb-list">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="breadcomb-wp">
+									<div class="breadcomb-icon">
+										<i class="notika-icon notika-windows"></i>
+									</div>
+									<div class="breadcomb-ctn">
+										<h2>Data Table</h2>
+										<p>Welcome to Notika <span class="bread-ntd">Admin Template</span></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+								<div class="breadcomb-report">
+									<button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Breadcomb area End-->
+    <!-- Data Table area Start-->
+    <div class="data-table-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="data-table-list">
+                        <div class="basic-tb-hd">
+                            <h2>Basic Example</h2>
+                            <p>It's just that simple. Turn your simple table into a sophisticated data table and offer your users a nice experience and great features without any effort.</p>
+                        </div>
+                        <div class="table-responsive">
+                            <table id="data-table-basic" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Room no</th>
+                                        <th>Phone no</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>Admit date</th>
+                                        <th>Edit/Delete</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                {% for mem in member %}
+                                    <tr>
+                                        <td>{{mem.member_name}}</td>
+                                        <td>{{mem.room_no}}</td>
+                                        <td>{{mem.mobile}}</td>
+                                        <td>{{mem.email}}</td>
+                                        <td>{{mem.address}}</td>
+                                        <td>{{mem.admit_date}}</td>
+                                        <td><button type="button" class="btn nk-blue btn-info" data-toggle="modal" data-target="#myModalfourteen"><a href="/edit-member/{{ mem.id }}" style="color:white">Edit</button><button type="button" class="btn nk-red btn-info" data-toggle="modal" data-target="#myModalnine"><a href="/delete-member/{{ mem.id }}"style="color:white">Delete</button> </td>
+                                    </tr>
+                                    
+                                {% endfor %}    
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Room no</th>
+                                        <th>Phone no</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>Admit date</th>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

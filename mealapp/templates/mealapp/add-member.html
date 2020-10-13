@@ -1,0 +1,100 @@
+{% extends 'mealapp/base.html' %}
+{% load staticfiles %}
+{% load data_load %}
+{% block content %}	
+	<!-- Breadcomb area Start-->
+	<div class="breadcomb-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="breadcomb-list">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+								<div class="breadcomb-wp">
+									<div class="breadcomb-icon">
+										<i class="notika-icon notika-form"></i>
+									</div>
+									<div class="breadcomb-ctn">
+										<h2>Form Examples</h2>
+										<p>Welcome to Notika <span class="bread-ntd">Admin Template</span></p>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 col-sm-6 col-xs-3">
+								<div class="breadcomb-report">
+									<button data-toggle="tooltip" data-placement="left" title="Download Report" class="btn"><i class="notika-icon notika-sent"></i></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Breadcomb area End-->
+    <!-- Form Examples area start-->
+    <div class="form-example-area">
+        <div class="container">
+            <div class="row">
+            <form method="POST" action="">{% csrf_token %}            
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group ic-cmp-int">
+                        <div class="form-ic-cmp">
+                            <i class="notika-icon notika-support"></i>
+                        </div>
+                        <div class="nk-int-st">
+                            <input type="text" class="form-control" placeholder="Full Name" name="member_name">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group ic-cmp-int">
+                        <div class="form-ic-cmp">
+                            <i class="notika-icon notika-house"></i>
+                        </div>
+                        <div class="nk-int-st">
+                            <input type="text" class="form-control" placeholder="Address" name="address">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group ic-cmp-int">
+                        <div class="form-ic-cmp">
+                            <i class="notika-icon notika-mail"></i>
+                        </div>
+                        <div class="nk-int-st">
+                            <input type="text" class="form-control" placeholder="Email Address" name="email">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group ic-cmp-int">
+                        <div class="form-ic-cmp">
+                            <i class="notika-icon notika-phone"></i>
+                        </div>
+                        <div class="nk-int-st">
+                            <input type="text" class="form-control" placeholder="Contact Number" name="mobile">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <div class="form-group ic-cmp-int">
+                        <div class="form-ic-cmp">
+                            <i class="notika-icon notika-house"></i>
+                        </div>
+                        <div class="nk-int-st">
+                            <input type="text" class="form-control" placeholder="Room Number" name="room_no">
+                        </div>
+                    </div>
+                </div>
+                
+                        <center><div class="form-example-int mg-t-15">
+                            <button class="btn btn-success notika-btn-success">Submit</button>
+                        </div></center>
+                    </form>
+            </div>
+        </div>
+    </div>
+    <!-- Form Examples area End-->
+
+{% endblock %}
